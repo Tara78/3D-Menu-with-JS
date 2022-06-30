@@ -1,0 +1,112 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #454950;
+  /*To provide 3D enviroment*/
+  perspective: 40rem;
+}
+
+.menu{
+  width: 100%;
+  padding: 0 25rem;
+  display: flex;
+  justify-content:space-evenly;
+    /*To provide 3D enviroment*/
+  transform-style: preserve-3d;
+}
+.change.menu .menu-item{
+  transform:rotateY(0) rotateX(0) 
+  translateX(0) translateY(0) translateZ(0);
+  opacity: 1;
+}
+.menu-item{
+  width: 22rem;
+  height: 12rem;
+  background-color:#5588dd;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  border-radius: 1rem;
+  cursor: pointer;
+box-shadow: 0 0 2rem rgba(100,100,255,0.4);
+margin-right: 10px;
+margin-left: 10px;
+
+
+/* transition: all 2s; */
+}
+/* Hide all items but nr3 */
+.menu-item:not(.center-item){
+  opacity: 0;
+}
+
+.menu-item:hover{
+  background-color:#ccccff;
+  box-shadow: 0 0 3rem regb(100, 100, 255, 0.6) ;
+}
+
+.menu-item:hover i{
+  color: #6464ff;
+}
+
+.menu-item:nth-child(1){
+transform:rotateY(-70deg) rotateX(20deg) 
+translateX(-50rem)
+translateY(-15rem)
+translateZ(-50rem);
+transition:transform 1s ease-in, opacity 1s ease-in,
+background-color .5s, box-shadow .5s;
+
+}
+.menu-item:nth-child(2) {
+  transform: rotateY(-70deg) rotateX(20deg) 
+  translateX(-20rem) translateY(-5rem) translateZ(-20rem);
+  transition: transform 1s ease-in, opacity 1s ease-in,
+   background-color .5s,
+    box-shadow .5s;
+  ;
+}
+/* need light rotation in this case we don't want to hide ro remove'*/
+ .menu-item:nth-child(3) {
+  transform: rotateX(20deg) 
+}
+
+.menu-item:nth-child(4) {
+  transform: rotateY(70deg) rotateX(20deg)  
+translateX(20rem) translateY(-5rem) translateZ(-20rem);
+  transition: transform 1s ease-in, opacity 1s ease-in,
+  background-color .5s, box-shadow .5s;;
+}
+
+/* I used hover to all child to control & see the result. after result I removed :hover . The below is en example! and also transition: all 2s in menu item
+
+.menu:hover .menu-item:nth-child(5) {
+  transform: rotateY(70deg) rotateX(20deg)
+   translateX(50rem) translateY(-15rem) translateZ(-50rem);
+}  */
+ .menu-item:nth-child(5) {
+  transform: rotateY(70deg) rotateX(20deg) translateX(50rem) translateY(-15rem) translateZ(-50rem);
+    transition: transform 1s ease-in, opacity 1s ease-in, 
+    background-color .5s,box-shadow .5s;
+}
+
+
+
+.menu-item i{
+  font-size:5rem;
+  color: rgb(75, 66, 66);
+transition:color .5s
+
+}
